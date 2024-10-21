@@ -1,9 +1,28 @@
 A. Data Types:
 
-- int: For integers.
-- bool: For true/false values (true/false).
-- struct: To define composite data types.
-- float: For real numbers.
+<data_type> ::= <int_type> | <bool_type> | <float_type> | <struct_type>
+
+<int_type> ::= 'int'
+<bool_type> ::= 'bool'
+<float_type> ::= 'float'
+<struct_type> ::= 'struct' <identifier>
+
+<identifier> ::= <letter> <identifier_tail>
+<identifier_tail> ::= <letter_or_digit> | <letter_or_digit> <identifier_tail>
+<letter> ::= 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' |
+               'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+<digit> ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+<letter_or_digit> ::= <letter> | <digit>
+<constant> ::= <int_const> | <bool_const>
+
+<int_const> ::= <digit> | <digit> <int_const>
+<bool_const> ::= 'true' | 'false'
+<struct_type> ::= 'struct' <identifier> '{' <member_list> '}'
+
+<member_list> ::= <member_decl> | <member_decl> <member_list>
+
+<member_decl> ::= <data_type> <identifier> [ '=' <expr> ] ';'
+
 
 B. Instructions:
 
