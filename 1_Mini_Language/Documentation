@@ -1,0 +1,63 @@
+# Mini-Language Documentation
+
+## Overview:
+This mini-language provides a simplified syntax for solving basic computational problems. It supports core programming constructs such as variables, input/output operations, conditional statements, loops, and function calls.
+
+### Data Types:
+1. int: Used to represent integer values.
+2. bool: Used to represent boolean values (true or false).
+3. struct: Used to define composite data types.
+4. float: Used to represent real numbers.
+
+### Instructions:
+
+1. Assignment Instruction:
+   - Syntax: identifier = expression;
+   - Assigns the value of an expression to a variable.
+
+2. Input Instruction:
+   - Syntax: cin >> identifier;
+   - Reads input from the user and stores it in the variable.
+
+3. Output Instruction:
+   - Syntax: cout << expression;
+   - Prints the result of an expression to the console.
+
+4. Conditional Instruction:
+   - Syntax: if (condition) { instructions } [else { instructions }]
+   - Evaluates the condition. If true, executes the first block. If false, executes the optional else block.
+
+5. Loop Instruction:
+   - Syntax:
+     - while (condition) { instructions }
+     - for (assignment; condition; assignment) { instructions }
+   - Executes a block of instructions while the condition is true.
+
+### Restrictions:
+
+1. Identifiers:
+   - Can only contain letters and digits, but must begin with a letter.
+   - Identifiers cannot be reserved keywords (e.g., int, bool, cin, cout).
+
+2. Constants:
+   - Constants can be of type int or bool and cannot be changed once initialized.
+
+### Language Structure:
+
+A program in this mini-language consists of the following sections:
+1. Header:
+   - Specifies necessary imports like iostream and uses the std namespace.
+   
+2. Main Function:
+   - The main() function contains the declaration of variables and the instruction list. It must end with return 0;.
+
+3. Declarations:
+   - Variables can be declared with or without initialization.
+   
+4. Instruction List:
+   - Contains a series of instructions including assignments, conditionals, loops, and function calls.
+
+### Operators:
+
+- Arithmetic Operators: +, -, *, /
+- Relational Operators: !=, ==, <, >, <=, >=
