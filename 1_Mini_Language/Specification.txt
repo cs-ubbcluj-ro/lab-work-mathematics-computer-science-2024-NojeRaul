@@ -1,0 +1,70 @@
+A. Data Types:
+
+- int: For integers.
+- bool: For true/false values (true/false).
+- struct: To define composite data types.
+- float: For real numbers.
+
+B. Instructions:
+
+1. Assignment Instruction: 
+   - Format: identifier = expression;
+   
+2. Input/Output Instructions:
+   - Input: cin >> identifier;
+   - Output: cout << expression;
+   
+3. Conditional Instruction:
+   - Format: if (condition) { instructions } [else { instructions }]
+   
+4. Loop Instruction:
+   - Format: while (condition) { instructions }
+
+C. Additional Restrictions:
+
+1. Identifiers:
+   - May contain only letters and digits but must start with a letter.
+   - Cannot be reserved words (e.g., int, bool, struct, if, else, while, cin, cout).
+
+2. Constants:
+   - Defined by simple values of type int or bool (true/false).
+   - A constant cannot be modified after initialization.
+
+D. Language Structure:
+
+1. <program> ::= <header> <main_func> <decl_list> <instr_list>
+
+2. <header> ::= #include <iostream> using namespace std;
+
+3. <main_func> ::= int main() { <decl_list> <instr_list> return 0; }
+
+4. <decl_list> ::= <decl> | <decl> <decl_list>
+   - <decl> ::= <type> ID [= <expr>];
+   - <type> ::= int | float | bool | struct ID
+
+5. <instr_list> ::= <instr> <instr_list>
+   - <instr> ::= <assign> | <input_instr> | <output_instr> | <conditional_instr> | <loop_instr> | <function_call_instr>
+
+6. <assign> ::= ID = <expr>;
+
+7. <input_instr> ::= cin >> ID;
+
+8. <output_instr> ::= cout << <expr>;
+
+9. <conditional_instr> ::= if (<cond>) <block> [else <block>]
+
+10. <loop_instr> ::= while (<cond>) <block> | for (<assign> <cond>; <assign>) <block>
+
+11. <function_call_instr> ::= ID(<param_list>);
+
+12. <param_list> ::= <expr> | <expr>, <param_list> | e
+
+13. <cond> ::= <expr> <rel_op> <expr> | <expr>
+
+14. <expr> ::= ID | CONST | <expr> <art_op> <expr> | (<expr>)
+
+15. <art_op> ::= + | - | * | /
+
+16. <rel_op> ::= != | == | < | > | <= | >=
+
+17. <block> ::= { <instr_list> }
