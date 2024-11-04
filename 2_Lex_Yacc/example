@@ -1,0 +1,22 @@
+begin
+int a;
+real b;
+char c;
+a = 5;
+b = 3.14;
+c = "hello";
+
+if (a > 0) {
+    write(a);
+}
+
+while (b < 10.5) {
+    b = b + 1;
+}
+
+for (a = 0; a < 10; a = a + 1) {
+    read(c);
+    write(b);
+}
+
+end
