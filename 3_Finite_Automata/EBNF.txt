@@ -1,11 +1,17 @@
-<file>         ::= <states> "\n" <alphabet> "\n" <transitions>
-<states>       ::= "states:" <state> {"," <state>}
-<alphabet>     ::= "alphabet:" <symbol> {"," <symbol>}
-<transitions>  ::= (<start_state> | <final_states> | <transition>) "\n" {(<start_state> | <final_states> | <transition>) "\n"}
-<start_state>  ::= "start:" <state>
-<final_states> ::= "final:" <state> {"," <state>}
-<transition>   ::= <state> "," <symbol> "->" <state>
+finite_automaton ::= states , alphabet , transitions , start_state , final_states ;
 
-<state>        ::= <identifier>
-<symbol>       ::= <identifier>
-<identifier>   ::= {letter | digit | "_"}+
+states ::= "states:" , state_list ;
+state_list ::= state , { "," , state } ;
+state ::= identifier ;
+
+alphabet ::= "alphabet:" , symbol_list ;
+symbol_list ::= symbol , { "," , symbol } ;
+symbol ::= identifier ;
+
+transitions ::= "transitions:" , { transition } ;
+transition ::= state , "," , symbol , "->" , state ;
+
+start_state ::= "start:" , state ;
+
+final_states ::= "final:" , state_list ;
+identifier  ::= {letter | digit | "_"}+
