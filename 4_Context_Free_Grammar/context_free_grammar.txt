@@ -1,0 +1,49 @@
+<program> ::= <header> <main_func> <decl_list> <instr_list>
+
+<header> ::= "#include <iostream>" "using namespace std;"
+
+<main_func> ::= "int main() {" <decl_list> <instr_list> "return 0;" "}"
+
+<decl_list> ::= <decl> | <decl> <decl_list>
+<decl> ::= <data_type> <identifier> ["=" <expr>] ";"
+
+<data_type> ::= <int_type> | <float_type> | <bool_type> | <struct_type>
+<int_type> ::= "int"
+<float_type> ::= "float"
+<bool_type> ::= "bool"
+<struct_type> ::= "struct" <identifier>
+
+<instr_list> ::= <instr> | <instr> <instr_list>
+<instr> ::= <assign_instr> | <input_instr> | <output_instr> | <conditional_instr> | <loop_instr> | <function_call_instr>
+
+<assign_instr> ::= <identifier> "=" <expr> ";"
+<input_instr> ::= "cin" ">>" <identifier> ";"
+<output_instr> ::= "cout" "<<" <expr> ";"
+
+<conditional_instr> ::= "if" "(" <cond> ")" <block> ["else" <block>]
+<loop_instr> ::= "while" "(" <cond> ")" <block> | "for" "(" <assign_instr> <cond> ";" <assign_instr> ")" <block>
+<function_call_instr> ::= <identifier> "(" <param_list> ")" ";"
+
+<param_list> ::= <expr> | <expr> "," <param_list> | ε
+
+<cond> ::= <expr> <rel_op> <expr> | <expr>
+<rel_op> ::= "!=" | "==" | "<" | ">" | "<=" | ">="
+
+<expr> ::= <identifier> | <constant> | <expr> <art_op> <expr> | "(" <expr> ")"
+<art_op> ::= "+" | "-" | "*" | "/"
+
+<block> ::= "{" <instr_list> "}"
+
+<constant> ::= <int_const> | <bool_const>
+<int_const> ::= <digit> | <digit> <int_const>
+<bool_const> ::= "true" | "false"
+
+<identifier> ::= <letter> <identifier_tail>
+<identifier_tail> ::= <letter_or_digit> | <letter_or_digit> <identifier_tail>
+<letter_or_digit> ::= <letter> | <digit>
+<letter> ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+<digit> ::= "0" | "1" | ... | "9"
+
+<struct_type> ::= "struct" <identifier> "{" <member_list> "}"
+<member_list> ::= <member_decl> | <member_decl> <member_list>
+<member_decl> ::= <data_type> <identifier> ["=" <expr>] ";"
