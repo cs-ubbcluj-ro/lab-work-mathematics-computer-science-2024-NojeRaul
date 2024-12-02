@@ -1,0 +1,11 @@
+states: q0,q1,q2,q3
+alphabet: r,a,u,l,0,1,2,3,4,5
+q0, r -> q1
+q1, a -> q2
+q2, u -> q3
+q3, l -> q3
+q3, 1 -> q3
+q3, 2 -> q3
+q3, 4 -> q3
+start: q0
+final: q3
