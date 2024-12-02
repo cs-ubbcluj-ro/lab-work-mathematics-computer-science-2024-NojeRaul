@@ -12,7 +12,7 @@ Non-Terminals:
 <intconst>, <nr>, <string>, <char>, <boolconst>
 
 Productions:
-1. <program> -> "int main()" "{" <decllist> ";" <compoundstmt> "return 0;" "}"
+1. <program> -> "#include <iostream>" "using namespace std;" "int main()" "{" <decllist> ";" <compoundstmt> "return 0;" "}"
 2. <decllist> -> <declaration> | <declaration> <decllist>
 3. <declaration> -> <type> <identifier> ";"
 4. <type> -> "bool" | "int"
@@ -43,3 +43,4 @@ Productions:
 Epsilon (End Symbol): 
 <decllist> -> ε
 <stmtlist> -> ε
+
